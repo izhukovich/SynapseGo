@@ -1,4 +1,4 @@
-module github.com/SynapseFI/SynapseGo
+module github.com/izhukovich/SynapseGo
 
 go 1.14
 
