@@ -330,11 +330,11 @@ func (u *User) ShipCard(nodeID, subnetID, data string) (map[string]interface{}, 
 }
 
 // GetCardShipment gets card shipment details
-func (u *User) GetCardShipment(nodeID, subnetID, data string) (map[string]interface{}, error) {
+func (u *User) GetCardShipment(nodeID, subnetID string) (map[string]interface{}, error) {
 	log.info("==========  GET CARD SHIPMENT DETAILS ==========")
 	url := buildURL(path["users"], u.UserID, path["nodes"], nodeID, path["subnets"], subnetID, "ship")
 
-	return u.do("GET", url, data, nil)
+	return u.do("GET", url, "", nil)
 }
 
 /********** TRANSACTION **********/
