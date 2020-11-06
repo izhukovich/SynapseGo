@@ -298,11 +298,11 @@ func (u *User) GetNodeSubnets(nodeID string, queryParams ...string) (map[string]
 }
 
 // GetSubnet gets a single subnet object
-func (u *User) GetSubnet(nodeID, subnetID string) (map[string]interface{}, error) {
+func (u *User) GetSubnet(nodeID, subnetID string, queryParams ...string) (map[string]interface{}, error) {
 	log.info("========== GET SUBNET ==========")
 	url := buildURL(path["users"], u.UserID, path["nodes"], nodeID, path["subnets"], subnetID)
 
-	return u.do("GET", url, "", nil)
+	return u.do("GET", url, "", queryParams)
 }
 
 // CreateSubnet creates a subnet object
